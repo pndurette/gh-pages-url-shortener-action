@@ -37,7 +37,7 @@ runs:
     - shell: bash
       run: |
         # Generate Jekyll Configuration
-        cp ${GITHUB_ACTION_PATH}/_config.yml .
+        cp ${GITHUB_ACTION_PATH}/.github/_config.yml .
         mkdir _redirects
 
     # Generate Jekyll Documents
