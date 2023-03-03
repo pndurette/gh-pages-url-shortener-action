@@ -1,0 +1,14 @@
+plugins:
+  # Adds 'redirect_to' key to front-matter (whitelisted by GitHub Pages)
+  # https://github.com/jekyll/jekyll-redirect-from
+  - "jekyll-redirect-from"
+
+collections:
+  redirects:
+    output: true
+    permalink: /:name
+
+exclude:
+  - README.md
+  - LICENSE
+  - .*

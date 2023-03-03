@@ -1,0 +1,47 @@
+name: Reusable Workflow for a Bats test of the Action
+
+on:
+  workflow_call:
+    inputs:
+      # Pre-Action commands
+      pre-run:
+        required: false
+        type: string
+
+      # Explicit Action inputs
+      urls_config:
+        required: true
+        type: string
+      default_redirect:
+        required: true
+        type: string
+
+      # Post-Action commands
+      post-run:
+        required: true
+        type: string
+
+jobs:
+  bats-test:
+    name: Bats Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install Bats
+        run: npm install -g bats@1.9.0
+      - name: Pre-Run
+        run: |
+          ${{ inputs.pre-run }}
+      - name: Run Action
+        uses: ./.github/gh-pages-url-shortener-action
+        with:
+          urls_config: ${{ inputs.urls_config }}
+          default_redirect: ${{ inputs.default_redirect }}
+      - name: Post-Run
+        run: |
+          ${{ inputs.post-run }}
