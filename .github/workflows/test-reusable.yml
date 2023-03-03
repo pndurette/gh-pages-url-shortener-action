@@ -38,7 +38,7 @@ jobs:
         run: |
           ${{ inputs.pre-run }}
       - name: Run Action
-        uses: ./.github/gh-pages-url-shortener-action
+        uses: ./
         with:
           urls_config: ${{ inputs.urls_config }}
           default_redirect: ${{ inputs.default_redirect }}
