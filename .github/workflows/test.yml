@@ -25,7 +25,7 @@ jobs:
         EOF
       urls_config: urls_tests.yml
       default_redirect: "Nothing to see!"
-      post-run: bats .github/bats-tests/test_gen.bats
+      post-run: bats ./tests/test_gen.bats
 
   test-default-redirect-url:
     name: Default (Redirect URL)
@@ -33,7 +33,7 @@ jobs:
     with:
       urls_config: not_needed.yml
       default_redirect: "http://www.d.com"
-      post-run: bats .github/bats-tests/test_default_url.bats
+      post-run: bats ./tests/test_default_url.bats
 
   test-default-message:
     name: Default (Message)
@@ -41,7 +41,7 @@ jobs:
     with:
       urls_config: not_needed.yml
       default_redirect: "abc"
-      post-run: bats .github/bats-tests/test_default_msg.bats
+      post-run: bats ./tests/test_default_msg.bats
 
 # Notes:
 # Reusable workflows in the same repo MUST:
