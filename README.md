@@ -23,62 +23,62 @@ See [How it works](#how-it-works).
 3. [Optional] [Configure custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 4. Create a new GitHub Actions workflow:
 
-<details><summary><code>.github/workflows/deploy.yml</code></summary>
-<p>
+   <details><summary><code>.github/workflows/deploy.yml</code></summary>
+   <p>
 
-(This is GitHub's own [GitHub Pages Jekyll](https://github.com/actions/starter-workflows/blob/da484b4eb58a75ee389d1483a295b33c9774ea0f/pages/jekyll-gh-pages.yml) starter workflow with `actions/jekyll-build-page` swapped for this action)
+   (This is GitHub's own [GitHub Pages Jekyll](https://github.com/actions/starter-workflows/blob/da484b4eb58a75ee389d1483a295b33c9774ea0f/pages/jekyll-gh-pages.yml) starter workflow with `actions/jekyll-build-page` swapped for this action). See [Configuration](#configuration) below.
 
-```yaml
-name: Deploy URL Shortener
+   ```yaml
+   name: Deploy URL Shortener
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: [main]
+   on:
+   # Runs on pushes targeting the default branch
+   push:
+      branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+   # Allows you to run this workflow manually from the Actions tab
+   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+   # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+   permissions:
+   contents: read
+   pages: write
+   id-token: write
 
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+   # Allow one concurrent deployment
+   concurrency:
+   group: "pages"
+   cancel-in-progress: true
 
-jobs:
-  # Build job
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Generate URL Shortener
-        uses: pndurette/gh-pages-url-shortener-action@v1
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+   jobs:
+   # Build job
+   build:
+      runs-on: ubuntu-latest
+      steps:
+         - name: Checkout
+         uses: actions/checkout@v3
+         - name: Setup Pages
+         uses: actions/configure-pages@v3
+         - name: Generate URL Shortener
+         uses: pndurette/gh-pages-url-shortener-action@v1
+         - name: Upload artifact
+         uses: actions/upload-pages-artifact@v1
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-```
+   # Deployment job
+   deploy:
+      environment:
+         name: github-pages
+         url: ${{ steps.deployment.outputs.page_url }}
+      runs-on: ubuntu-latest
+      needs: build
+      steps:
+         - name: Deploy to GitHub Pages
+         id: deployment
+         uses: actions/deploy-pages@v1
+   ```
 
-</p>
-</details>
+   </p>
+   </details>
 
 
 5. Create a URL redirect configuration file:
@@ -103,10 +103,7 @@ Will generate the following links:
 </p>
 </details>
 
-
-3. Push to `main` 
-
-   1. The action run  (`<new repo>` > Actions) summary will list the generated redirect URLs, each being 
+6. Push to `main`
 
 <!--doc_begin-->
 ### Inputs
