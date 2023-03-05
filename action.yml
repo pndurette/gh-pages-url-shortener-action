@@ -20,8 +20,8 @@ inputs:
   default_redirect:
     description: |
       Default behaviour for `/` or any 404, can be either:
-      * a URL to redirect to
-      * a message to display
+        * a URL to redirect to
+        * a message to display
     required: false
     default: "Nothing here!"
 
