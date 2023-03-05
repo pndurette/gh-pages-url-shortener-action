@@ -103,8 +103,7 @@ See [How it works](#how-it-works).
    </p>
    </details>
 
-6. Push to `main`
-   Watch the action run summary for more information
+6. Push to `main` (watch the action run summary for more info)
 
 ## Configuration
 
