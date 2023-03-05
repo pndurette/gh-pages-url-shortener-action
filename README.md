@@ -83,25 +83,25 @@ See [How it works](#how-it-works).
 
 5. Create a URL redirect configuration file:
 
-<details><summary><code>.github/urls.yml</code></summary>
-<p>
+   <details><summary><code>.github/urls.yml</code></summary>
+   <p>
 
-Each `<key>` will be the path redirecting to a url `<value>`. For example:
+   Each `<key>` will be the path redirecting to a url `<value>`. For example:
 
-```yaml
-abc: "https://google.com"
-def: "https://yahoo.com"
-ayz: "https://some-other-site.com"
-```
+   ```yaml
+   abc: "https://google.com"
+   def: "https://yahoo.com"
+   ayz: "https://some-other-site.com"
+   ```
 
-Will generate the following links:
+   Will generate the following links:
 
-* `http://<your site>/abc` will redirect to `https://google.com`
-* `http://<your site>/def` will redirect to `https://yahoo.com`
-* `http://<your site>/zyz` will redirect to `https://some-other-site.com`
+   * `http://<your site>/abc` will redirect to `https://google.com`
+   * `http://<your site>/def` will redirect to `https://yahoo.com`
+   * `http://<your site>/zyz` will redirect to `https://some-other-site.com`
 
-</p>
-</details>
+   </p>
+   </details>
 
 6. Push to `main`
 
