@@ -22,6 +22,7 @@ See [How it works](#how-it-works).
 
    <details><summary><code>.github/workflows/deploy.yml</code></summary>
    <p>
+   
    (This is GitHub's own [GitHub Pages Jekyll](https://github.com/actions/starter-workflows/blob/da484b4eb58a75ee389d1483a295b33c9774ea0f/pages/jekyll-gh-pages.yml) starter workflow with `actions/jekyll-build-page` swapped for this action).
 
    See [Configuration](#configuration) below for action inputs.
