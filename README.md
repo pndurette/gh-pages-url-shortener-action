@@ -89,6 +89,7 @@ See [How it works](#how-it-works).
    Each `<key>` will be the path redirecting to a url `<value>`. For example:
 
    ```yaml
+   ---
    abc: "https://google.com"
    def: "https://yahoo.com"
    ayz: "https://some-other-site.com"
