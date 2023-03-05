@@ -1,5 +1,5 @@
 plugins:
-  # Adds 'redirect_to' key to front-matter (whitelisted by GitHub Pages)
+  # Adds 'redirect_to' attribute to front-matter (whitelisted by GitHub Pages)
   # https://github.com/jekyll/jekyll-redirect-from
   - "jekyll-redirect-from"
 
