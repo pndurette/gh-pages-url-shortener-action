@@ -6,7 +6,7 @@
 ## About
 
 * Minimal inside and out: no templates, no layouts, no code
-* Uses only built-in GitHub Pages (powered by [Jekyll](https://jekyllrb.com)) and first-party actions
+* Uses only built-in GitHub Pages features (powered by [Jekyll](https://jekyllrb.com)) and first-party actions
 * Easy setup: add  `pndurette/gh-pages-url-shortener-action` to a worflow, create `urls.yml`
 
 See [How it works](#how-it-works).
