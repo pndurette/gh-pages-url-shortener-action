@@ -22,7 +22,7 @@ See [How it works](#how-it-works).
 
    <details><summary><code>.github/workflows/deploy.yml</code></summary>
    <p>
-   
+
    (This is GitHub's own [GitHub Pages Jekyll](https://github.com/actions/starter-workflows/blob/da484b4eb58a75ee389d1483a295b33c9774ea0f/pages/jekyll-gh-pages.yml) starter workflow with `actions/jekyll-build-page` swapped for this action).
 
    See [Configuration](#configuration) below for action inputs.
@@ -118,7 +118,7 @@ See [How it works](#how-it-works).
 
 ## How it works
 
-All the logic is shared between a Jekyll [`_config.yml`](.github/_config.yml) and the action itself in [`action.yml`](action/yml).
+All the logic is shared between a Jekyll [`_config.yml`](.github/_config.yml) and the action itself in [`action.yml`](action.yml).
 
 ### Jekyll
 
@@ -179,7 +179,7 @@ The [composite](https://docs.github.com/en/actions/creating-actions/creating-a-c
 
 ### Generated files
 
-The generated file hierarchy of is minimal. For instance, for a `url.yml` that might contain:
+The generated file hierarchy is minimal. For instance, for a `url.yml` that might contain:
 
 ```yaml
 ---
@@ -201,7 +201,7 @@ The action will generate (if the action input `default_redirect` is set to a URL
 └── index.md
 ```
 
-The GitHub Pages-hosted directory will look like:
+And the GitHub Pages-hosted directory will look like:
 
 ```
 .
