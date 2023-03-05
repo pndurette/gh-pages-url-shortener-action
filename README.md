@@ -104,7 +104,7 @@ See [How it works](#how-it-works).
    </p>
    </details>
 
-6. Push to `main` (watch the action run summary for more info)
+6. Push to `main` (watch the action run summary for more info!)
 
 ## Configuration
 
