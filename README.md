@@ -23,7 +23,7 @@ See [How it works](#how-it-works).
 3. [Optional] [Configure custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 4. Add GitHub Actions workflow:
 
-<details><summary><pre>.github/workflows/deploy.yml`</pre></summary>
+<details><summary><code>.github/workflows/deploy.yml`</code></summary>
 <p>
 
 #### We can hide anything, even code!
