@@ -26,7 +26,7 @@ See [How it works](#how-it-works).
 <details><summary><code>.github/workflows/deploy.yml</code></summary>
 <p>
 
-(This is GitHub's own ["GitHub Pages Jekyll"](https://github.com/actions/starter-workflows/blob/da484b4eb58a75ee389d1483a295b33c9774ea0f/pages/jekyll-gh-pages.yml) starter workflow with `actions/jekyll-build-page` swapped for this action)
+(This is GitHub's own [GitHub Pages Jekyll](https://github.com/actions/starter-workflows/blob/da484b4eb58a75ee389d1483a295b33c9774ea0f/pages/jekyll-gh-pages.yml) starter workflow with `actions/jekyll-build-page` swapped for this action)
 
 ```yaml
 name: Deploy URL Shortener
@@ -81,50 +81,28 @@ jobs:
 </details>
 
 
+5. Create a URL redirect configuration file:
 
+<details><summary><code>.github/urls.yml</code></summary>
+<p>
 
+Each `<key>` will be the path redirecting to a url `<value>`. For example:
 
+```yaml
+abc: "https://google.com"
+def: "https://yahoo.com"
+ayz: "https://some-other-site.com"
+```
 
+Will generate the following links:
 
+* `http://<your site>/abc` will redirect to `https://google.com`
+* `http://<your site>/def` will redirect to `https://yahoo.com`
+* `http://<your site>/zyz` will redirect to `https://some-other-site.com`
 
+</p>
+</details>
 
-1. Create new GitHub Actions workflow (`<new repo>` > Actions)
-
-   1. Search for `GitHub Pages Jekyll` (By GitHub Actions ) > Configure
-   2. Replace the `Build with Jekyll` step by this action, i.e:
-
-   ```diff
-   [...]
-   
-   jobs:
-     # Build job
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         - name: Checkout
-           uses: actions/checkout@v3
-         - name: Setup Pages
-           uses: actions/configure-pages@v3
-   -     - name: Build with Jekyll
-   -       uses: actions/jekyll-build-pages@v1
-   -       with:
-   -         source: ./
-   -         destination: ./_site
-   +     - name: Generate URL Shortener
-   +       uses: pndurette/gh-pages-url-shortener-action@v1
-         - name: Upload artifact
-           uses: actions/upload-pages-artifact@v1
-           
-   [...]
-   ```
-
-2. Add a URLs configuration file (default is `.github/urls.yml`), e.g.:
-
-   ```yaml
-   # <short url code>: <url to redirect to>
-   key1: https://yahoo.com
-   key2: https://google.com
-   ```
 
 3. Push to `main` 
 
