@@ -171,11 +171,11 @@ The plugin will generate an HTML file per Collection document, with every possib
 </html>
 ```
 
-Allowing the it to be hit at `https://<site>/link1`. It does the same for the `index.html` and `404.hml` (for `/` or non-existing path, respetively), which can also be redirects or plain strings (default is `Nothing here!`).
+Allowing it to be reached at `https://<site>/link1`. It does the same for the `index.html` and `404.hml` (for `/` or non-existing path, respetively), which can also be redirects or plain strings (default is `Nothing here!`).
 
 ### Action
 
-The [composite](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action) action in  [`action.yml`](action.yml)  reads `url.yml` and translates it to individual per-URL `.md` file. It will then call the official [`actions/jekyll-build-pages`](https://github.com/actions/jekyll-build-pages) action to generate the content. It also generates a table summary of what was generated.
+The [composite](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action) action in  [`action.yml`](action.yml)  reads `url.yml` and translates it to individual per-URL `.md` file. It will then call the official [`actions/jekyll-build-pages`](https://github.com/actions/jekyll-build-pages) action to generate the content. It also shows a table summary of what was generated.
 
 ### Generated files
 
