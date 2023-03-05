@@ -86,14 +86,12 @@ See [How it works](#how-it-works).
    1. The action run  (`<new repo>` > Actions) summary will list the generated redirect URLs, each being 
 
 <!--doc_begin-->
-
 ### Inputs
 |Input|Description|Default|Required|
 |-----|-----------|-------|:------:|
 |`urls_config`|<p>The path to a YAML file associating redirect keys to URLs, e.g.:</p><pre>---<br />test1: https://www.bookcity.ca/<br />test2: https://www.gladdaybookshop.com<br /></pre>|`.github/urls.yml`|no|
 |`default_redirect`|<p>Default behaviour for '/' or any 404, can be either:<br />* a URL to redirect to<br />* a message to display</p>|`Nothing here!`|no|
-### Outputs
-None
+
 <!--doc_end-->
 
 
