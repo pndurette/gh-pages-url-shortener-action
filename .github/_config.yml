@@ -1,0 +1,19 @@
+plugins:
+  # Adds 'redirect_to' attribute to front-matter (whitelisted by GitHub Pages)
+  # https://github.com/jekyll/jekyll-redirect-from
+  - "jekyll-redirect-from"
+
+# Override GitHub Pages' default 
+# "Primer" theme to no theme
+# (prevents generation of assets)
+theme: null
+
+collections:
+  redirects:
+    output: true
+    permalink: /:name
+
+exclude:
+  - README.md
+  - LICENSE
+  - .*

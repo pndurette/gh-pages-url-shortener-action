@@ -1,0 +1,50 @@
+name: Tests
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  # Required for actions/jekyll-build-pages:
+  id-token: write 
+  pages: write
+
+jobs:
+  test-generation:
+    name: Generate Redirects
+    uses: ./.github/workflows/test-reusable.yml
+    with:
+      pre-run: |
+        # Create a test urls config file
+        cat <<- EOF > urls_tests.yml
+        ---
+        test-a: http://www.a.com
+        test-b: http://www.b.com
+        test-c: http://www.c.com
+        EOF
+      urls_config: urls_tests.yml
+      default_redirect: "Nothing to see!"
+      post-run: bats ./tests/test_gen.bats
+
+  test-default-redirect-url:
+    name: Default (Redirect URL)
+    uses: ./.github/workflows/test-reusable.yml
+    with:
+      urls_config: not_needed.yml
+      default_redirect: "http://www.d.com"
+      post-run: bats ./tests/test_default_url.bats
+
+  test-default-message:
+    name: Default (Message)
+    uses: ./.github/workflows/test-reusable.yml
+    with:
+      urls_config: not_needed.yml
+      default_redirect: "abc"
+      post-run: bats ./tests/test_default_msg.bats
+
+# Notes:
+# Reusable workflows in the same repo MUST:
+# * Be in ./.github/workflows
+# * Be referenced (in "uses:") starting with "./",
+#   i.e. "./.github/workflows/<workflow>"
