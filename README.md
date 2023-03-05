@@ -1,6 +1,8 @@
 # gh-pages-url-shortener-action
 > Lightweight GitHub Pages URL shortener powered by GitHub Actions
 
+[![Tests](https://github.com/pndurette/gh-pages-url-shortener-action/actions/workflows/test.yml/badge.svg)](https://github.com/pndurette/gh-pages-url-shortener-action/actions/workflows/test.yml)
+
 ## About
 
 * Minimal in and out: no template, no layout, no code
@@ -138,7 +140,7 @@ collections:
 
 *The above reads: "In `_redirects` (Jekyll's convention), generate one file per document (`output: true`) for which the final URL path will be `/:name` (i.e. name of the file, minus the extension)"*
 
-For example, for an entry  `link1: "https://google.com"` in `urls.yml`, the action would create `_redirect/link1.yml` as:
+For example, for an entry `link1: "https://google.com"` in `urls.yml`, the action would create `_redirect/link1.yml` as:
 
 ```yaml
 ---
