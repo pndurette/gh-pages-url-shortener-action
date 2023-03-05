@@ -3,6 +3,9 @@ plugins:
   # https://github.com/jekyll/jekyll-redirect-from
   - "jekyll-redirect-from"
 
+# Override GitHub Pages' default 
+# "Primer" theme to no theme
+# (prevents generation of assets)
 theme: null
 
 collections:

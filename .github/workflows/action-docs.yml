@@ -18,3 +18,5 @@ jobs:
         ref: ${{ github.event.pull_request.head.ref }}
     
     - uses: pndurette/gh-actions-auto-docs@v1
+      with:
+        include_outputs: false
