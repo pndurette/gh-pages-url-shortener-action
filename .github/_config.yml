@@ -3,7 +3,7 @@ plugins:
   # https://github.com/jekyll/jekyll-redirect-from
   - "jekyll-redirect-from"
 
-theme: none
+theme: null
 
 collections:
   redirects:
