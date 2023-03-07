@@ -175,11 +175,11 @@ Allowing it to be reached at `https://<site>/link1`. It does the same for the `i
 
 ### Action
 
-The [composite](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action) action in  [`action.yml`](action.yml)  reads `url.yml` and translates it to individual per-URL `.md` file. It will then call the official [`actions/jekyll-build-pages`](https://github.com/actions/jekyll-build-pages) action to generate the content. It also shows a table summary of what was generated.
+The [composite](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action) action in  [`action.yml`](action.yml)  reads `urls.yml` and translates it to individual per-URL `.md` file. It will then call the official [`actions/jekyll-build-pages`](https://github.com/actions/jekyll-build-pages) action to generate the content. It also shows a table summary of what was generated.
 
 ### Generated files
 
-The generated file hierarchy is minimal. For instance, for a `url.yml` that might contain:
+The generated file hierarchy is minimal. For instance, for a `urls.yml` that might contain:
 
 ```yaml
 ---
