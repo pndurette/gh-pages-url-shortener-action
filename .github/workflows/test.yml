@@ -56,7 +56,7 @@ jobs:
       default_redirect: "Nothing to see!"
       post-run: echo
 
-test-default-redirect-url:
+  test-default-redirect-url:
     name: Default (Redirect URL)
     uses: ./.github/workflows/test-reusable.yml
     with:
