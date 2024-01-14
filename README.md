@@ -55,13 +55,13 @@ See [How it works](#how-it-works).
       runs-on: ubuntu-latest
       steps:
          - name: Checkout
-           uses: actions/checkout@v3
+           uses: actions/checkout@v4
          - name: Setup Pages
            uses: actions/configure-pages@v3
          - name: Generate URL Shortener
            uses: pndurette/gh-pages-url-shortener-action@v2
          - name: Upload artifact
-           uses: actions/upload-pages-artifact@v1
+           uses: actions/upload-pages-artifact@v3
 
    # Deployment job
    deploy:
@@ -73,7 +73,7 @@ See [How it works](#how-it-works).
       steps:
          - name: Deploy to GitHub Pages
          id: deployment
-         uses: actions/deploy-pages@v1
+         uses: actions/deploy-pages@v4
    ```
 
    </p>
