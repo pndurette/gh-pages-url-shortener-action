@@ -171,7 +171,7 @@ The plugin will generate an HTML file per Collection document, with every possib
 </html>
 ```
 
-Allowing it to be reached at `https://<site>/link1`. It does the same for the `index.html` and `404.hml` (for `/` or non-existing path, respetively), which can also be redirects or plain strings (default is `Nothing here!`).
+Allowing it to be reached at `https://<site>/link1`. It does the same for the `index.html` and `404.hml` (for `/` or non-existing path, respetively), which can also be redirects (absolute or relative to the domain) or plain strings (default is `Nothing here!`).
 
 ### Action
 
