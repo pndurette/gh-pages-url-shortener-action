@@ -52,12 +52,15 @@ runs:
         URLS_CONFIG: ${{ inputs.urls_config }}
       run: |
         # Generate Jekyll Documents
+        require 'fileutils'
         require 'yaml'
         begin
           urls = YAML.load_file(ENV['URLS_CONFIG'])
           urls.each do |key, url|
             puts "key: #{key}, url: #{url}"
-            File.open("_redirects/#{key}.md", 'w') do |doc|
+            file_path = "_redirects/#{key}.md"
+            FileUtils.mkdir_p(File.dirname(file_path))
+            File.open(file_path, 'w') do |doc|
               doc << "---\n"
               doc << "redirect_to: #{url}\n"
               doc << "---\n"

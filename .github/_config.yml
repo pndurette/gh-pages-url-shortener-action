@@ -11,7 +11,7 @@ theme: null
 collections:
   redirects:
     output: true
-    permalink: /:name
+    permalink: /:path
 
 exclude:
   - README.md
