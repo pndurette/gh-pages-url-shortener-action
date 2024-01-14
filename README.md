@@ -217,4 +217,4 @@ And the GitHub Pages-hosted directory will look like:
 
 ## License
 
-[The MIT License (MIT)](LICENSE) Copyright © 2023 Pierre Nicolas Durette
+[The MIT License (MIT)](LICENSE) Copyright © 2023-2024 Pierre Nicolas Durette
