@@ -29,26 +29,26 @@ See [How it works](#how-it-works).
 
    ```yaml
    name: Deploy URL Shortener
-   
+
    on:
    # Runs on pushes targeting the default branch
    push:
       branches: [main]
-   
+
    # Allows you to run this workflow manually from the Actions tab
    workflow_dispatch:
-   
+
    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
    permissions:
    contents: read
    pages: write
    id-token: write
-   
+
    # Allow one concurrent deployment
    concurrency:
    group: "pages"
    cancel-in-progress: true
-   
+
    jobs:
    # Build job
    build:
@@ -62,7 +62,7 @@ See [How it works](#how-it-works).
          uses: pndurette/gh-pages-url-shortener-action@v1
          - name: Upload artifact
          uses: actions/upload-pages-artifact@v1
-   
+
    # Deployment job
    deploy:
       environment:
@@ -85,7 +85,7 @@ See [How it works](#how-it-works).
    <details><summary><code>.github/urls.yml</code></summary>
    <p>
 
-   Each `<key>` will be the path redirecting to a url `<value>`.  For example:
+   Each `<key>` will be the path redirecting to a url `<value>`. For example:
 
    ```yaml
    ---
