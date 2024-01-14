@@ -59,7 +59,7 @@ See [How it works](#how-it-works).
          - name: Setup Pages
          uses: actions/configure-pages@v3
          - name: Generate URL Shortener
-         uses: pndurette/gh-pages-url-shortener-action@v1
+         uses: pndurette/gh-pages-url-shortener-action@v2
          - name: Upload artifact
          uses: actions/upload-pages-artifact@v1
 
