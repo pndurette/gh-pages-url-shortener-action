@@ -55,13 +55,13 @@ See [How it works](#how-it-works).
       runs-on: ubuntu-latest
       steps:
          - name: Checkout
-         uses: actions/checkout@v3
+           uses: actions/checkout@v3
          - name: Setup Pages
-         uses: actions/configure-pages@v3
+           uses: actions/configure-pages@v3
          - name: Generate URL Shortener
-         uses: pndurette/gh-pages-url-shortener-action@v2
+           uses: pndurette/gh-pages-url-shortener-action@v2
          - name: Upload artifact
-         uses: actions/upload-pages-artifact@v1
+           uses: actions/upload-pages-artifact@v1
 
    # Deployment job
    deploy:
