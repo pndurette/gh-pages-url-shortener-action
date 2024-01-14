@@ -91,14 +91,14 @@ See [How it works](#how-it-works).
    ---
    abc: "https://google.com"
    def: "https://yahoo.com"
-   xyz: "https://some-other-site.com"
+   uvw/xyz: "https://some-other-site.com"  # The <key> can be a path
    ```
 
    Will generate the following links:
 
    * `http://<your site>/abc` will redirect to `https://google.com`
    * `http://<your site>/def` will redirect to `https://yahoo.com`
-   * `http://<your site>/xyz` will redirect to `https://some-other-site.com`
+   * `http://<your site>/uvw/xyz` will redirect to `https://some-other-site.com`
 
    </p>
    </details>
@@ -131,11 +131,11 @@ Each URL to redirect is created by the action as an individual document defined 
 collections:
   redirects:
     output: true
-    permalink: /:name
+    permalink: /:path
 
 ```
 
-*The above reads: "In `_redirects` (Jekyll's convention), generate one file per document (`output: true`) for which the final URL path will be `/:name` (i.e. name of the file, minus the extension)"*
+*The above reads: "In `_redirects` (Jekyll's convention), generate one file per document (`output: true`) for which the final URL path will be `/:path` (i.e. path to the file, including the file, minus the extension)"*
 
 For example, for an entry `link1: "https://google.com"` in `urls.yml`, the action would create `_redirect/link1.yml` as:
 
@@ -185,7 +185,7 @@ The generated file hierarchy is minimal. For instance, for a `urls.yml` that mig
 ---
 abc: "https://google.com"
 def: "https://yahoo.com"
-xyz: "https://some-other-site.com"
+uvw/xyz: "https://some-other-site.com"
 ```
 
 The action will generate (if the action input `default_redirect` is set to a URL):
@@ -197,7 +197,8 @@ The action will generate (if the action input `default_redirect` is set to a URL
 ├── _redirects
 │   ├── abc.md
 │   ├── def.md
-│   └── xyz.md
+│   └── uvw
+|       └── xyz.md
 └── index.md
 ```
 
@@ -210,7 +211,8 @@ And the GitHub Pages-hosted directory will look like:
 ├── def.html
 ├── index.html
 ├── redirects.json
-└── xyx.html
+└── uvw
+    └── xyx.html
 ```
 
 ## License

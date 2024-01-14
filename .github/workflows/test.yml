@@ -27,6 +27,20 @@ jobs:
       default_redirect: "Nothing to see!"
       post-run: bats ./tests/test_gen.bats
 
+  test-generation-paths:
+    name: Generate Redirects (sub-paths)
+    uses: ./.github/workflows/test-reusable.yml
+    with:
+      pre-run: |
+        # Create a test urls config file
+        cat <<- EOF > urls_tests.yml
+        ---
+        a/b/c/test-d: http://www.abcd.com
+        EOF
+      urls_config: urls_tests.yml
+      default_redirect: "Nothing to see!"
+      post-run: bats ./tests/test_gen_paths.bats
+
   test-default-redirect-url:
     name: Default (Redirect URL)
     uses: ./.github/workflows/test-reusable.yml
