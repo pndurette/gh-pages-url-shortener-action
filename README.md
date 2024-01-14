@@ -112,7 +112,7 @@ See [How it works](#how-it-works).
 |Input|Description|Default|Required|
 |-----|-----------|-------|:------:|
 |`urls_config`|<p>The path to a YAML file associating redirect keys to URLs, e.g.:</p><pre>---<br />test1: https://www.bookcity.ca/<br />test2: https://www.gladdaybookshop.com<br /></pre>|`.github/urls.yml`|no|
-|`default_redirect`|<p>Default behaviour for <code>/</code> or any 404, can be either:<br />  * a URL (absolute) to redirect to (e.g. <code>https://www.aol.com/</code>)<br />  * a URL (relative) to redirect to from the domain (e.g. <code>/blog</code>)<br />  * a message to display (e.g. <code>Nothing here!</code>)</p>|`Nothing here!`|no|
+|`default_redirect`|<p>Default behaviour for <code>/</code> or any 404, can be either:<br />  * a URL (absolute) to redirect to<br />    (e.g. <code>https://www.aol.com/</code>)<br />  * a URL (relative) to redirect to from the domain<br />    (e.g. <code>/blog</code>)<br />  * a message to display<br />    (e.g. <code>Nothing here!</code>)</p>|`Nothing here!`|no|
 
 <!--doc_end-->
 
