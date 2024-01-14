@@ -112,7 +112,7 @@ See [How it works](#how-it-works).
 |Input|Description|Default|Required|
 |-----|-----------|-------|:------:|
 |`urls_config`|<p>The path to a YAML file associating redirect keys to URLs, e.g.:</p><pre>---<br />test1: https://www.bookcity.ca/<br />test2: https://www.gladdaybookshop.com<br /></pre>|`.github/urls.yml`|no|
-|`default_redirect`|<p>Default behaviour for <code>/</code> or any 404, can be either:<br />  * a URL to redirect to<br />  * a message to display</p>|`Nothing here!`|no|
+|`default_redirect`|<p>Default behaviour for <code>/</code> or any 404, can be either:<br />  * a URL (absolute) to redirect to (e.g. <code>https://www.aol.com/</code>)<br />  * a URL (relative) to redirect to from the domain (e.g. <code>/blog</code>)<br />  * a message to display (e.g. <code>Nothing here!</code>)</p>|`Nothing here!`|no|
 
 <!--doc_end-->
 
@@ -171,7 +171,7 @@ The plugin will generate an HTML file per Collection document, with every possib
 </html>
 ```
 
-Allowing it to be reached at `https://<site>/link1`. It does the same for the `index.html` and `404.hml` (for `/` or non-existing path, respetively), which can also be redirects or plain strings (default is `Nothing here!`).
+Allowing it to be reached at `https://<site>/link1`. It does the same for the `index.html` and `404.hml` (for `/` or non-existing path, respetively), which can also be redirects (absolute or relative to the domain) or plain strings (default is `Nothing here!`).
 
 ### Action
 

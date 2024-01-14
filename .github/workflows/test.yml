@@ -49,6 +49,14 @@ jobs:
       default_redirect: "http://www.d.com"
       post-run: bats ./tests/test_default_url.bats
 
+  test-default-redirect-url-root:
+    name: Default (Redirect URL, root)
+    uses: ./.github/workflows/test-reusable.yml
+    with:
+      urls_config: not_needed.yml
+      default_redirect: /some_root_path
+      post-run: echo
+
   test-default-message:
     name: Default (Message)
     uses: ./.github/workflows/test-reusable.yml

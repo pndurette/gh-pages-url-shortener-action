@@ -20,8 +20,9 @@ inputs:
   default_redirect:
     description: |
       Default behaviour for `/` or any 404, can be either:
-        * a URL to redirect to
-        * a message to display
+        * a URL (absolute) to redirect to (e.g. `https://www.aol.com/`)
+        * a URL (relative) to redirect to from the domain (e.g. `/blog`)
+        * a message to display (e.g. `Nothing here!`)
     required: false
     default: "Nothing here!"
 
@@ -77,7 +78,10 @@ runs:
     #   Sets permalink key to 404.html as per GitHub docs
 
     - shell: bash
-      if: startsWith(inputs.default_redirect, 'http')
+      id: url_redirect
+      if: |
+        startsWith(inputs.default_redirect, 'http') ||
+        startsWith(inputs.default_redirect, '/')
       env:
         REDIRECT_URL: ${{ inputs.default_redirect }}
       run: |
@@ -99,7 +103,7 @@ runs:
     # * Generate a plain 404.html with the message
 
     - shell: bash
-      if: "!startsWith(inputs.default_redirect, 'http')"
+      if: steps.url_redirect.conclusion == 'skipped'
       env:
         MESSAGE: ${{ inputs.default_redirect }}
       run: |
