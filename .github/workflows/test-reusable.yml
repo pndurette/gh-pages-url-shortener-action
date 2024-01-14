@@ -46,6 +46,8 @@ jobs:
         run: tree -a _redirects
       - name: Show tree (_site)
         run: tree -a _site
+      - name: Show index.html
+        run: cat _site/index.html
       - name: Post-Run
         run: |
           ${{ inputs.post-run }}
