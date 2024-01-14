@@ -198,7 +198,7 @@ The action will generate (if the action input `default_redirect` is set to a URL
 │   ├── abc.md
 │   ├── def.md
 │   └── uvw
-|       ├──xyz.md
+|       └── xyz.md
 └── index.md
 ```
 
