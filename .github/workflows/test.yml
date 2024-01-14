@@ -40,8 +40,23 @@ jobs:
       urls_config: urls_tests.yml
       default_redirect: "Nothing to see!"
       post-run: bats ./tests/test_gen_paths.bats
+  
+  test-generation-mixed-paths:
+    uses: ./.github/workflows/test-reusable.yml
+    with:
+      pre-run: |
+        # Create a test urls config file
+        cat <<- EOF > urls_tests.yml
+        ---
+        a:          http://www.a.com  
+        a/b:        http://www.b.com
+        a/b/test-c: http://www.c.com
+        EOF
+      urls_config: urls_tests.yml
+      default_redirect: "Nothing to see!"
+      post-run: echo
 
-  test-default-redirect-url:
+test-default-redirect-url:
     name: Default (Redirect URL)
     uses: ./.github/workflows/test-reusable.yml
     with:
