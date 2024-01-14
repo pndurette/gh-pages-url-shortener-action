@@ -42,6 +42,10 @@ jobs:
         with:
           urls_config: ${{ inputs.urls_config }}
           default_redirect: ${{ inputs.default_redirect }}
+      - name: Show tree (_redirects)
+        run: tree -a _redirects
+      - name: Show tree (_site)
+        run: tree -a _site
       - name: Post-Run
         run: |
           ${{ inputs.post-run }}
