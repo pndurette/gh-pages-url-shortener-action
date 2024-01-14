@@ -13,8 +13,8 @@ EOF
 ##  * Generated the proper Markdown content
 
 @test "a/b/c/temp-d.md should be generated" {
-    test -f _redirects/a/b/c/temp-d.md
-    diff    _redirects/a/b/c/temp-d.md temp-d.md
+    test -f _redirects/a/b/c/test-d.md
+    diff    _redirects/a/b/c/test-d.md temp-d.md
 }
 
 ## Check if Jekyll:
@@ -23,7 +23,7 @@ EOF
 ##      * Contains "<!DOCTYPE html>"
 ##      * Contains the URL redirect
 
-@test "test-a.html should be generated" {
+@test "test-d.html should be generated" {
     test -f _site/a/b/c/test-d.html
     cat _site/a/b/c/test-d.html | grep "<\!DOCTYPE html>"
     cat _site/a/b/c/test-d.html | grep "http://www.abcd.com"
